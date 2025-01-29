@@ -5,6 +5,7 @@ import HomePage from './components/HomePage';
 import AboutPage from './components/AboutPage';
 import ServicesPage from './components/ServicesPage';
 import ContactPage from './components/ContactPage';
+import PricingPage from './components/PricingPage';
 import './App.scss';
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/pricing" element={<PricingPage />} />
+
         </Routes>
       </div>
     </Router>
