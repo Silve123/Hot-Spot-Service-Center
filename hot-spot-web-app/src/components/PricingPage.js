@@ -3,8 +3,8 @@ import React from 'react';
 const PricingPage = () => {
   return (
     <div>
-      <h1>Welcome to the Home Page</h1>
-      <p>This is the home page of the application.</p>
+      <h1>Pricing</h1>
+      <p>pricing</p>
     </div>
   );
 };

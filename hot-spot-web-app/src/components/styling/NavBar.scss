@@ -4,17 +4,17 @@
   align-items: center;
   background-color: black;
   color: #fff;
-  
-  .logo-container{
+
+  .logo-container {
     width: 10%;
     .navbar__logo {
       padding: 0.5rem 0.5rem;
       width: 100%;
       height: auto;
-      animation: heartbeat 4s infinite; 
+      animation: heartbeat 4s infinite;
       cursor: pointer;
     }
-    
+
     @keyframes heartbeat {
       0% {
         transform: scale(1);
@@ -38,23 +38,91 @@
       }
     }
   }
-  
-  &__links {
-    padding: 1rem 2rem;
+
+  .links-container {
     display: flex;
-    list-style: none;
-    margin: 0;
+    align-items: center;
 
-    li {
-      margin-left: 1.5rem;
+    .navbar__links {
+      padding: 1rem 2rem;
+      display: flex;
+      list-style: none;
+      margin: 0;
+      align-items: center;
 
-      a {
-        color: #fff;
-        text-decoration: none;
-        transition: color 0.3s ease;
+      li {
+        margin-left: 1.5rem;
 
-        &:hover {
-          color: #f0a500;
+        a {
+          font-size: large;
+          color: #fff;
+          text-decoration: none;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #f0a500;
+          }
+        }
+      }
+
+      .important-links {
+        display: flex;
+        flex-direction: row;
+
+        .dropdown {
+          position: relative;
+
+          span {
+            text-align: center;
+            width: 5rem;
+            cursor: pointer;
+            padding: 1rem 2rem;
+            background-color: black;
+            border: 2px solid white;
+            color: white;
+            font-weight: bold;
+            display: block;
+
+            &:hover {
+              background-color: #f0a500;
+              border: 2px solid #f0a500;
+              color: white;
+            }
+          }
+
+          .dropdown-menu {
+            width: 100%;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: black;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            z-index: 1000;
+
+            li {
+              margin: 0;
+
+              a {
+                display: block;
+                padding: 1rem 2rem;
+                color: white;
+                text-decoration: none;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                  background-color: #f0a500;
+                  color: black;
+                }
+              }
+            }
+          }
+
+          &:hover .dropdown-menu {
+            display: block;
+          }
         }
       }
     }
@@ -75,38 +143,64 @@
     }
   }
 
-  .service-centre-container{
-    width: 20%;
-    .service-centre__logo{
-      width: 100%;
+  .service-centre-container {
+    width: 15%;
 
+    .service-centre__logo {
+      width: 100%;
     }
   }
-  
+
   @media (max-width: 768px) {
-    .navbar{
-      .logo-container{
-        width: 20%;
+    .logo-container {
+      width: 20%;
+    }
+
+    .service-centre-container{
+      width: 25%;
+    }
+
+    .links-container {
+      display: none; 
+      flex-direction: column;
+      width: 100%;
+      background-color: black;
+      position: absolute;
+      top: 60px; 
+      left: 0;
+      z-index: 1000; 
+
+      &.active {
+        display: flex;
+      }
+
+      .navbar__links {
+        flex-direction: column;
+        padding: 0;
+
+        li {
+          margin: 1rem 0;
+          text-align: center;
+
+          .important-links {
+            flex-direction: column;
+
+            li {
+              margin: 0.5rem 0;
+            }
+          }
+        }
+        .important-links {
+          flex-direction: column;
+          li{
+            margin: 0.3rem 0;
+          }
+        }
       }
     }
-  
-    .navbar__links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: black;
-        position: absolute;
-        top: 60px;
-        left: 0;
-  
-        &.active {
-            display: flex;
-        }
-  
-        li {
-            margin: 1rem 0;
-            text-align: center;
-        }
-      }
+
+    &__hamburger {
+      display: flex; 
+    }
   }
 }
