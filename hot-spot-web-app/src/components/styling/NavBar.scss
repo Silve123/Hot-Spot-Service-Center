@@ -14,6 +14,7 @@
     width: 100%;
     height: auto;
     animation: heartbeat 4s infinite; 
+    cursor: pointer;
   }
   
   @keyframes heartbeat {
@@ -74,41 +75,31 @@
       transition: all 0.3s ease;
     }
   }
-
+  
   @media (max-width: 768px) {
-    &__links {
-      display: none;
-    }
-
-    &__hamburger {
-      display: flex;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar{
-    .logo-container{
-      width: 20%;
-    }
-  }
-
-  .navbar__links {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      background-color: black;
-      position: absolute;
-      top: 60px;
-      left: 0;
-
-      &.active {
-          display: flex;
-      }
-
-      li {
-          margin: 1rem 0;
-          text-align: center;
+    .navbar{
+      .logo-container{
+        width: 20%;
       }
     }
+  
+    .navbar__links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: black;
+        position: absolute;
+        top: 60px;
+        left: 0;
+  
+        &.active {
+            display: flex;
+        }
+  
+        li {
+            margin: 1rem 0;
+            text-align: center;
+        }
+      }
+  }
 }
