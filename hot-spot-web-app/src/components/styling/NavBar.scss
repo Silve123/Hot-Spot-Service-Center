@@ -4,6 +4,20 @@
   align-items: center;
   background-color: black;
   color: #fff;
+  position: fixed;
+  top: 0;
+  opacity: 0.01;
+  height: 15vh;
+  transition: opacity 0.5s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &.full-opacity {
+    opacity: 1;
+  }
+
 
   .logo-container {
     width: 10%;
@@ -11,31 +25,7 @@
       padding: 0.5rem 0.5rem;
       width: 100%;
       height: auto;
-      animation: heartbeat 4s infinite;
       cursor: pointer;
-    }
-
-    @keyframes heartbeat {
-      0% {
-        transform: scale(1);
-        opacity: 1;
-      }
-      25% {
-        transform: scale(0.9);
-        opacity: 0.1;
-      }
-      50% {
-        transform: scale(1);
-        opacity: 1;
-      }
-      75% {
-        transform: scale(0.9);
-        opacity: 0.1;
-      }
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
     }
   }
 
@@ -144,6 +134,7 @@
   }
 
   .service-centre-container {
+    margin: 0 2rem;
     width: 15%;
 
     .service-centre__logo {
@@ -199,6 +190,15 @@
       }
     }
 
+    &__hamburger {
+      display: flex; 
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .links-container {
+      display: none; 
+    }
     &__hamburger {
       display: flex; 
     }

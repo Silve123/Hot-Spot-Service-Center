@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './styling/NavBar.scss';
-import logo from './assets/hotspot-logo.png';
+import logo0 from './assets/hotspot-logo.png';
+import logo1 from './assets/hotspot-logo-One.png';
+import logo2 from './assets/hotspot-logo-Two.png';
+import logo3 from './assets/hotspot-logo-Three.png';
 import serviceCentre from './assets/servicecentre.png';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isAtTop, setIsAtTop] = useState(true);
+  const [isScrollingUp, setIsScrollingUp] = useState(false);
+  const [prevScrollY, setPrevScrollY] = useState(0);
+  const [currentLogo, setCurrentLogo] = useState(0);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -15,11 +22,53 @@ const NavBar = () => {
     setIsOpen(false);
   };
 
+  const logos = [
+    logo0,
+    logo1,
+    logo2,
+    logo3
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentLogo((prevIndex) => (prevIndex + 1) % logos.length);
+    }, 1000); 
+
+    return () => clearInterval(interval);
+  }, []);
+  
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY === 0) {
+        setIsAtTop(true);
+      } else {
+        setIsAtTop(false);
+      }
+
+      if (currentScrollY < prevScrollY) {
+        setIsScrollingUp(true);
+      } else {
+        setIsScrollingUp(false);
+      }
+
+      setPrevScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [prevScrollY]);
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isAtTop || isScrollingUp ? 'full-opacity' : ''}`}>
       <div className='logo-container'>
         <Link to="/">
-          <img src={logo} alt='HotSpot-Logo' className='navbar__logo' />
+          <img src={logos[currentLogo]} alt='HotSpot-Logo' className='navbar__logo' />
         </Link>
       </div>
       <div className={`links-container ${isOpen ? 'active' : ''}`}>

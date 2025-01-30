@@ -1,0 +1,21 @@
+.App{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    .routes{
+        flex: 1;
+        margin-top: 15vh;
+    }
+    
+    @media (max-width: 719px) {
+        .routes{
+            margin-top: 15vh;
+        }
+    }
+    
+    @media (min-width: 719px) and (max-width: 992px) {
+        .routes{
+            margin-top: 15vh;
+        }
+    }
+}
