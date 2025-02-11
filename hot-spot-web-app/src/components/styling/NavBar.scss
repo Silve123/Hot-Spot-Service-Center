@@ -9,6 +9,7 @@
   opacity: 0.01;
   height: 15vh;
   transition: opacity 0.5s ease-in-out;
+  z-index: 99;
 
   &:hover {
     opacity: 1;
@@ -33,6 +34,8 @@
     display: flex;
     align-items: center;
 
+    
+
     .navbar__links {
       padding: 1rem 2rem;
       display: flex;
@@ -41,19 +44,26 @@
       align-items: center;
 
       li {
-        margin-left: 1.5rem;
+        margin-left: 1rem;
 
         a {
           font-size: large;
           color: #fff;
           text-decoration: none;
           transition: color 0.3s ease;
+          padding: 2.5px 10px;
 
           &:hover {
             color: #f0a500;
           }
         }
       }
+
+      .activeTab{
+        a{
+          color: #f0a500;
+        }
+      }    
 
       .important-links {
         display: flex;

@@ -12,7 +12,7 @@ const Footer = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
             >
-                <FaWhatsapp size={25} />
+                <FaWhatsapp size={40} />
             </a>
             <div className='footer_content-container'>
                 <div className='footer_content-container-samsung-tab'>
@@ -39,22 +39,22 @@ const Footer = () => {
                 </div>
                 <div className='footer_content-container-quick-contact'>
                     <h2>Quick Contact</h2>
-                    <li>
+                    <a href="tel:0160230349">
                         <FaPhone size={25} className='icon' />
-                        <Link to="/contact" >071 908 0400</Link>
-                    </li>
-                    <li>
+                        <p>016 023 0349</p>
+                    </a>
+                    <a href="https://wa.me/27719080400">
                         <FaWhatsapp size={25} className='icon'/>
-                        <Link to="/contact" >084 212 4444</Link>
-                    </li>
-                    <li>
+                        <p>073 117 1145</p>
+                    </a>
+                    <a>
                         <FaMap size={25} className='icon' />
-                        <Link to="/contact" >31 Solstice Road New Town Centre Umhlanga</Link>
-                    </li>
-                    <li>
+                        <p>Unit 10, Prime Business Park, 6 Rabie St</p>
+                    </a>
+                    <a href='mailto:info@samsung-smartcare.co.za'>
                         <FaEnvelope size={25} className='icon' />
-                        <Link to="/contact" >info@samsung-smartcare.co.za</Link>
-                    </li>
+                        <p>info@samsung-hotspot.co.za</p>
+                    </a>
                 </div>
             </div>
             <div className='copyright-container'>

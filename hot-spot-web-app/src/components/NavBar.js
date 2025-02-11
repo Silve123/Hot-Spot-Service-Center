@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './styling/NavBar.scss';
 import logo0 from './assets/hotspot-logo.png';
 import logo1 from './assets/hotspot-logo-One.png';
@@ -7,12 +7,14 @@ import logo2 from './assets/hotspot-logo-Two.png';
 import logo3 from './assets/hotspot-logo-Three.png';
 import serviceCentre from './assets/servicecentre.png';
 
+
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isAtTop, setIsAtTop] = useState(true);
   const [isScrollingUp, setIsScrollingUp] = useState(false);
   const [prevScrollY, setPrevScrollY] = useState(0);
   const [currentLogo, setCurrentLogo] = useState(0);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -73,19 +75,33 @@ const NavBar = () => {
       </div>
       <div className={`links-container ${isOpen ? 'active' : ''}`}>
         <ul className={'navbar__links'}>
-          <li><Link to="/" onClick={closeMenu}>Home</Link></li>
-          <li><Link to="/about" onClick={closeMenu}>About</Link></li>
-          <li><Link to="/services" onClick={closeMenu}>Services</Link></li>
-          <li><Link to="/pricing" onClick={closeMenu}>Pricing</Link></li>
-          <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
+          <li className={location.pathname === '/' ? 'activeTab' : ''}>
+            <Link to="/" onClick={closeMenu}>Home</Link>
+          </li>
+          <li className={location.pathname === '/about' ? 'activeTab' : ''}>
+            <Link to="/about" onClick={closeMenu}>About</Link>
+          </li>
+          <li className={location.pathname === '/services' ? 'activeTab' : ''}>
+            <Link to="/services" onClick={closeMenu}>Services</Link>
+          </li>
+          <li className={location.pathname === '/pricing' ? 'activeTab' : ''}>
+            <Link to="/pricing" onClick={closeMenu}>Pricing</Link>
+          </li>
+          <li className={location.pathname === '/contact' ? 'activeTab' : ''}>
+            <Link to="/contact" onClick={closeMenu}>Contact</Link>
+          </li>
         </ul>
         <ul className={'navbar__links'}>
           <li className='important-links'>
             <div className="dropdown">
               <span>Book/Track</span>
               <ul className="dropdown-menu">
-                <li><Link to="/book" onClick={closeMenu}>Book</Link></li>
-                <li><Link to="/track" onClick={closeMenu}>Track</Link></li>
+                <li className={location.pathname === '/book' ? 'activeTab' : ''}>
+                  <Link to="/book" onClick={closeMenu}>Book</Link>
+                </li>
+                <li className={location.pathname === '/track' ? 'activeTab' : ''}>
+                  <Link to="/track" onClick={closeMenu}>Track</Link>
+                </li>
               </ul>
             </div>
           </li>
@@ -93,9 +109,15 @@ const NavBar = () => {
             <div className="dropdown">
               <span>T's & C's</span>
               <ul className="dropdown-menu">
-                <li><Link to="/terms/general" onClick={closeMenu}>General</Link></li>
-                <li><Link to="https://www.samsung.com/za/support/warranty/" onClick={closeMenu}>Warranty</Link></li>
-                <li><Link to="https://www.samsung.com/za/offer/samsung-care-plus/" onClick={closeMenu}>SMC</Link></li>
+                <li>
+                  <Link to="/terms/general" onClick={closeMenu}>General</Link>
+                </li>
+                <li>
+                  <Link to="https://www.samsung.com/za/support/warranty/" onClick={closeMenu}>Warranty</Link>
+                </li>
+                <li>
+                  <Link to="https://www.samsung.com/za/offer/samsung-care-plus/" onClick={closeMenu}>SMC</Link>
+                </li>
               </ul>
             </div>
           </li>

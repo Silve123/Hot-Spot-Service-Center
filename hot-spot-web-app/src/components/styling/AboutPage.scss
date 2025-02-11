@@ -1,3 +1,176 @@
 .about{
-    height: 200vh;
+    &-hero-container{
+        width: 100%;
+        height: 20rem;
+        background-image: url('../assets/shop-image.jpeg');
+        display: flex;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        &-content{
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 2rem;
+            h1{
+                margin: 0;
+                font-size: 5rem;
+                color: #f0a500;
+            }
+            p{
+                font-size: 1.5rem;
+                color: white;
+            }
+        }
+    }
+
+    &-summary-container{
+        margin-top: 3rem;
+        padding: 3rem;
+        .icon{
+            color: #f0a500;
+        }
+        h1{
+            font-weight: 400;
+            margin-top: 1rem;
+        }
+        p{
+            margin-right: 4rem;
+            line-height: 2rem;;
+            font-weight: 100;
+            font-size: larger;
+        }
+    }
+
+    &-missions-container{
+        background-image: url('../assets/shop-image.jpeg');
+        display: flex;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        &-background{
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: space-evenly;
+            padding: 3rem;
+            .mission-cards{
+                background-color: white;
+                width: 30%;
+                height: 50vh;
+                padding: 2rem;
+                margin: 1rem;
+
+                .icon{
+                    color: #f0a500;
+                    margin-bottom: 1rem;
+                }
+                h1{
+                    font-weight: 400;
+                    margin: 0;
+                }
+                p{
+                    font-weight: lighter;
+                    line-height: 2rem;
+                }
+            }
+        }
+    }
+
+    &-meet-team{
+        background-image: url('../assets/shop-image.jpeg');
+        display: flex;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        &-background{
+            width: 100%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.85);
+            padding-bottom: 2rem;
+            h1{
+                font-size: xxx-large;
+                color: #f0a500;
+                font-weight: bolder;
+            }
+            .team{
+                display: flex;
+                padding: 2rem ;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                .person{
+                    padding: 4rem 1.5rem;
+                    width: 20vw;
+                    background-color: white;
+                    img{
+                        width: 10vw;
+                    }
+                    h1{
+                        margin-top: 1rem;
+                        font-size: 1.5em;
+                        color: black;
+                    }
+                    h2{
+                        margin: 0;
+                        font-size: 1em;
+                        color: #f0a500;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1024px) {
+        &-hero-container{
+            &-content{
+                h1{
+                    font-size: 2rem;
+                }
+                p{
+                    font-size: 1rem;
+                }
+            }
+        }
+        &-summary-container{
+            margin: 0;
+            padding: 1.5rem;
+            text-align: center;
+            p{
+                font-size: 1rem;
+                margin: 0;
+            }
+        }
+        &-missions-container{
+            &-background{
+                flex-direction: column;
+                padding: 0.01rem;
+                .mission-cards{
+                    width: auto;
+                    height: auto;
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        &-meet-team{
+            .team{
+                flex-direction: column;
+                .person{
+                    padding: 2rem 1rem;
+                    width: 90%;
+                    margin-bottom: 1rem;
+                    img{
+                        width: 30vw;
+                    }
+                }
+            }
+        }
+    }
 }
