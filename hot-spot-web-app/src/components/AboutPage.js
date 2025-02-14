@@ -19,7 +19,7 @@ const AboutPage = () => {
         <FaMedal size={40} className='icon'/>
         <h1>Company Summary</h1>
         <p>
-          SAMSUNG Customer Service in Vanderbijlpark is proudly managed and operated by Hot Spot Mobile, a company founded in April 2007 with extensive management, operational, and technical experience. Committed to excellence, our team is well-versed in the intricacies of the IT and service industry, ensuring a knowledgeable and proficient approach to customer needs.
+          SAMSUNG Customer Service in Vanderbijlpark is proudly managed and operated by Hot Spot Mobile, a company founded in April 2020 with extensive management, operational, and technical experience. Committed to excellence, our team is well-versed in the intricacies of the IT and service industry, ensuring a knowledgeable and proficient approach to customer needs.
         </p>
         <p>
           As a company, our primary objective is to specialize in a carefully selected range of product sets. Mobile Phones, LCD Monitors, TV’s, Home Theatre Systems, Microwaves, home appliances, Notebooks, and Gaming Consoles form our strategic business product repair lines. Our skilled engineers excel in repairing the entire spectrum of these products, with a specialized focus on modular and electronic board-level repairs, including intricate tasks such as BGA chips and surface-mounted technology. Trust us to bring precision and expertise to the repair of your valuable devices.
