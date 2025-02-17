@@ -1,10 +1,18 @@
 import React from 'react';
+import './styling/ServicesPage.scss';
 
 const ServicesPage = () => {
   return (
-    <div>
-      <h1>About Us</h1>
-      <p>Learn more about our services.</p>
+    <div className='services'>
+        <div className='services-hero-container'>
+            <div className='services-hero-container-background'>
+                  <h1>Our Services</h1>
+                  <p>Delivering top-notch quality services for a wide range of electronic devices.</p>
+            </div>
+        </div>
+        <div className='services-main-container'>
+            
+        </div>
     </div>
   );
 };
