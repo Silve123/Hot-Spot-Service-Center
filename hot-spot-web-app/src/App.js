@@ -6,6 +6,7 @@ import AboutPage from './components/AboutPage';
 import ServicesPage from './components/ServicesPage';
 import ContactPage from './components/ContactPage';
 import PricingPage from './components/PricingPage';
+import GeneralPage from './components/GeneralPage';
 import Footer from './components/Footer';
 import './App.scss';
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/terms/general" element={<GeneralPage />} />
         </Routes>
         <Footer/>
       </div>
