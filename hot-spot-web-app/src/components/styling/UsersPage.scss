@@ -1,0 +1,58 @@
+.main-container {
+    margin: 4rem;
+  
+    &-top-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        border-radius: 2rem;
+        padding: 0 2rem;
+    
+        h1,
+        a,
+        p {
+            color: white;
+        }
+    
+        a {
+            cursor: pointer;
+            background-color: red;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+    
+            &:hover {
+            background-color: white;
+            color: red;
+            }
+        }
+    }
+  }
+  
+  // ✅ Single media query for responsiveness
+  @media (max-width: 1024px) {
+    .main-container {
+      margin: 1rem;
+  
+      &-top-container {
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: 1rem;
+    
+            h1 {
+                font-size: 1.5rem;
+            }
+    
+            p {
+                font-size: 1rem;
+            }
+    
+            a {
+                padding: 0.4rem 0.8rem;
+                font-size: 1rem;
+            }
+      }
+    }
+  }
+  
