@@ -51,6 +51,7 @@ const Login = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
+      // Register user with email and password
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         regEmail,
@@ -59,26 +60,22 @@ const Login = () => {
   
       const user = userCredential.user;
   
+      // Update Firebase profile with name and phone
       await updateProfile(user, {
         displayName: `${regName} ${regSurname}`,
-        phoneNumber: regPhone,
       });
   
-      // Set user role to "customer" in Firestore
-      const userDocRef = doc(db, "Users", "Role");
-      await setDoc(
-        userDocRef,
-        {
-          [user.email]: { role: "customer" },
-        },
-        { merge: true }
-      );
+      // Save user details in Firestore under Users collection
+      await setDoc(doc(db, "Users", "Role"), {
+        [regEmail]: { regName, regPhone, role: "customer" },
+      }, { merge: true });
   
       navigate("/book");
     } catch (error) {
       console.error("Registration failed:", error);
     }
   };
+  
 
   const handleGoogleAuth = async () => {
     try {
